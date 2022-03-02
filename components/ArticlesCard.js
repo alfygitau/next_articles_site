@@ -1,15 +1,20 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
-const ArticlesCard = ({ author, description, publishedAt, title, id }) => {
+const ArticlesCard = ({
+  author,
+  description,
+  content,
+  publishedAt,
+  image,
+  title,
+}) => {
   return (
     <div className="article-content">
-      <Link href={`/articles/${id}`} passHref>
-        <a>
-          <h2>Author: {author}</h2>
-        </a>
-      </Link>
+      <div className="article-picture">
+          <img src={image} alt="article-picture" height={200} width={600}/>
+      </div>
+      <h2>Author: {author}</h2>
       <h3>{title}</h3>
       <h5>Published at: {publishedAt}</h5>
       <p>{description}</p>

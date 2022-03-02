@@ -2,7 +2,7 @@ import React from "react";
 import PostCard from "../../components/PostCard";
 
 const Posts = ({ data }) => {
-  console.log(data);
+  console.log("data",data);
   const posts = data;
   return (
     <div>
