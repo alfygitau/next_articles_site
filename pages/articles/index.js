@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
 import ArticlesCard from "../../components/ArticlesCard";
 import styles from "../../styles/posts.module.css";
@@ -25,7 +26,7 @@ const Articles = ({ articles }) => {
       <div>
         <h1>Articles Page</h1>
         {results.map((result) => (
-          <div key={result.id} className={styles.single}>
+          <div key={result.source.name} className={styles.single}>
             <ArticlesCard
               author={result.author}
               content={result.content}
@@ -33,6 +34,7 @@ const Articles = ({ articles }) => {
               image={result.urlToImage}
               title={result.title}
               publishedAt={result.publishedAt}
+              id={result.source.name}
             />
           </div>
         ))}
